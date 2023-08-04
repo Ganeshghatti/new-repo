@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&family=PT+Sans&display=swap");
+@mixin flex($direction) {
+  display: flex;
+  flex-direction: $direction;
+}
+
+.trending-card {
+  min-width: 24vw;
+  height: 200px;
+  cursor: pointer;
+  @include flex(column);
+  justify-content: space-between;
+  border-radius: 10px;
+  &:hover{
+    border: 2px solid white;
+  }
+  @media (max-width: 1125px) {
+    min-width: 250px;
+    height: 165px;
+  }
+  .trending-bookmark-icon{
+    background-color: rgba(0, 0, 0, 0.45);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    @include flex(row);
+    align-items: center;
+    justify-content: center;
+    margin: 7px 0 0 15px;
+    i{
+        color: white;
+        cursor: pointer;
+    }
+  }
+  .trending-description {
+    margin: 0 0 10px 15px;
+    @include flex(column);
+    .trending-details {
+      @include flex(row);
+      align-items: center;
+      gap: 1px;
+      p {
+        padding-right: 5px;
+        color: rgb(124, 127, 136);
+        font-family: "PT Sans", sans-serif;
+        font-size: clamp(1vw, 0.5rem, 1.5vw);
+        &:hover{
+          color: white;
+        }
+        @media (max-width: 900px) {
+          font-size: clamp(1vh, 0.5rem, 1.5vh);
+        }
+      }
+      .dot-img {
+        width: 5%;
+      }
+    }
+    .trending-show-name {
+      color: white;
+      font-family: "Nunito", sans-serif;
+      font-weight: 700;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+}

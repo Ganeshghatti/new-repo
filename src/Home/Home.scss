@@ -1,0 +1,185 @@
+$white: rgb(255, 255, 255);
+$black: rgb(0, 0, 0);
+$bgcolor: rgb(16, 20, 31);
+@import url("https://fonts.googleapis.com/css2?family=Nunito&family=PT+Sans&display=swap");
+
+@mixin flex($direction) {
+  display: flex;
+  flex-direction: $direction;
+}
+body {
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  overflow-x: hidden;
+  background-color: $bgcolor;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  @include flex(row);
+  align-items: center;
+  @media (max-width: 625px) {
+    @include flex(column);
+  }
+  nav {
+    background-color: rgb(22, 29, 47);
+    height: 90vh;
+    @include flex(column);
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 1.5vw;
+    border-radius: 10px;
+    position: fixed;
+    @media (max-width: 625px) {
+      height: 10vh;
+      width: 100vw;
+      @include flex(row);
+      border-radius: 0;
+      gap: 20vw;
+    }
+    .navbar {
+      @include flex(column);
+      align-items: center;
+      gap: 1.5rem;
+      @media (max-width: 625px) {
+        @include flex(row);
+      }
+      .fa-house {
+        color: white;
+      }
+      i {
+        color: rgb(88, 104, 140);
+        cursor: pointer;
+        &:hover{
+          color: white;
+        }
+      }
+    }
+    .profile-div {
+      @include flex(row);
+      justify-content: center;
+      width: 50%;
+      @media (max-width: 625px) {
+        width: 10%;
+      }
+      img {
+        cursor: pointer;
+        width: 100%;
+        border-radius: 50%;
+        border: 2px solid white;
+        @media (max-width: 625px) {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .content {
+    margin-left: 130px;
+    @include flex(column);
+    height: 90vh;
+    @media (max-width: 625px) {
+      margin-left: 0;
+      margin-top: 11vh;
+    }
+    .search-bar {
+      margin:1vh 0 0 2vw;
+      @include flex(row);
+      gap: 10px;
+      align-items: center;
+      @media (max-width: 625px) {
+        width: 100vw;
+        justify-content: center;
+        margin-left: 0;
+        gap: 7vw;
+      }
+      label {
+        i {
+          color: white;
+          cursor: pointer;
+          font-size: 130%;
+          &:hover{
+            color:  rgb(88, 104, 140);
+          }
+        }
+      }
+      input {
+        background-color: inherit;
+        color: gray;
+        border: none;
+        outline: none;
+        width: 475px;
+        padding: 10px 0 10px 40px;
+        border-radius: 15px;
+        border: 2px solid rgb(22, 29, 47);
+        font-family: "PT Sans", sans-serif;
+        &:focus{
+          border: 2px solid white;
+        }
+        @media (max-width: 625px) {
+          width: 60vw;
+        }
+      }
+    }
+    .trending {
+      @include flex(column);
+      width: calc(95vw - 150px);
+      @media (max-width: 625px) {
+        width: 96vw;
+      }
+      .trending-text {
+        color: white;
+        font-size: clamp(2vw, 2rem, 2.5vw);
+        margin:3vh 0 1vh 2vw;
+        font-family: "Nunito", sans-serif;
+        @media (max-width: 625px) {
+          margin-left: 4vw;
+          font-size: clamp(2vh, 2.1rem, 3vh);
+        }
+      }
+      .trending-div {
+        @include flex(row);
+        gap: 4vw 3.5vw;
+        flex-wrap:nowrap;
+        overflow: auto;
+        padding: 0 2vw;
+        @media (max-width: 625px) {
+          gap: 5vh 10vw;
+          padding: 0 4vw;
+        }
+      }
+    }
+    .all-shows {
+      @include flex(column);
+      margin-right: 40px;
+      width: calc(95vw - 150px);
+      @media (max-width: 625px) {
+        width: 96vw;
+        margin-right: 0;
+      }
+      .all-shows-text {
+        color: white;
+        font-size: clamp(2vw, 2rem, 2.5vw);
+        margin:5vh 0 1vh 2vw;
+        font-family: "Nunito", sans-serif;
+        @media (max-width: 625px) {
+          margin-left: 4vw;
+          font-size: clamp(2vh, 2.1rem, 3vh);
+        }
+      }
+      .all-shows-div {
+        @include flex(row);
+        justify-content: space-between;
+        gap: 4vw 3vw;
+        flex-wrap: wrap;
+        margin-bottom: 40px;
+        margin-left: 2vw;
+        @media (max-width: 625px) {
+          gap: 5vh 0;
+          margin-left: 4vw;
+        }
+      }
+    }
+  }
+}

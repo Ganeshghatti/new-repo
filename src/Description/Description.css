@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@300&display=swap");
+.description-container {
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 92vh;
+  background-position: 70% 10%;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  margin-top: 8vh;
+}
+.description-container .c .canvas1 {
+  margin-top: 8vh;
+  background-size: 100% 100%;
+  background-position: 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+  background-image: radial-gradient(35% 361% at 4% 54%, black 1%, rgba(255, 0, 0, 0) 99%), radial-gradient(54% 361% at 10% 54%, #484444 0%, rgba(255, 0, 0, 0) 99%), radial-gradient(54% 361% at 10% 54%, #484444 0%, rgba(255, 0, 0, 0) 99%), radial-gradient(54% 361% at 10% 54%, #484444 0%, rgba(255, 0, 0, 0) 99%), radial-gradient(54% 361% at 10% 54%, #484444 0%, rgba(255, 0, 0, 0) 99%);
+  opacity: 60%;
+  position: absolute;
+  z-index: 2;
+  width: 100vw;
+  height: 92vh;
+  top: 0;
+  left: 0;
+}
+.description-container .description-content {
+  z-index: 3;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50vw;
+  gap: 18px;
+  color: white;
+  padding: 10vh 0 0 5vw;
+}
+.description-container .description-content .description-show-name {
+  font-family: "Archivo Black", sans-serif;
+  font-size: clamp(2vw, 3rem, 3.5vw);
+  margin-bottom: 12px;
+}
+.description-container .description-content p {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+}
+.description-container .description-content .description-summary-text {
+  font-size: clamp(1vw, 0.9rem, 2.5vw);
+}
+.description-container .description-content .description-details-1 {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  align-items: center;
+}
+.description-container .description-content .description-details-2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-right: 10px;
+  gap: 20px;
+}
+.description-container .description-content .description-details-2 p:nth-child(1) {
+  text-decoration: underline;
+}
+.description-container .description-content .description-details-2 p:nth-child(2) {
+  background-color: rgb(61, 65, 70);
+  padding: 3px 5px;
+  border-radius: 5px;
+}
+.description-container .description-content .description-details-3 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+}
+.description-container .description-content .description-details-3 .description-watch-now-button {
+  cursor: pointer;
+  width: 250px;
+  padding: 15px 0;
+  border-radius: 10px;
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+}
+.description-container .description-content .description-details-3 .fa-plus,
+.description-container .description-content .description-details-3 .fa-share-from-square {
+  background-color: rgb(61, 65, 70);
+  border-radius: 50%;
+  font-size: 150%;
+  font-weight: 100;
+  padding: 10px;
+  cursor: pointer;
+}/*# sourceMappingURL=Description.css.map */

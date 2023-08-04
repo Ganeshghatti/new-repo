@@ -1,0 +1,109 @@
+@mixin flex($direction) {
+  display: flex;
+  flex-direction: $direction;
+}
+
+.main-navbar {
+  height: 6vh;
+  width: 100vw;
+  @include flex(row);
+  position: fixed;
+  justify-content: center;
+  top: 0;
+  gap: 6rem;
+  align-items: center;
+  background-color: #00050d;
+  padding: 1vh;
+  @media (max-width: 850px) {
+    justify-content: space-between;
+    gap: 0;
+  }
+  .navbar-menu {
+    .navbar-menu-options-div {
+      @include flex(row);
+      gap: 2rem;
+      i {
+        cursor: pointer;
+        color: rgb(124, 127, 136);
+        @include flex(row);
+        align-items: center;
+        gap: 0.3rem;
+        p {
+          font-family: "PT Sans", sans-serif;
+          font-size: clamp(1vw, 0.5rem, 1.5vw);
+        }
+        &:hover {
+          color: white;
+        }
+      }
+    }
+    .navbar-hamburgur-menu-div {
+      @include flex(row);
+      align-items: center;
+      color: white;
+      padding: 0 5vw;
+      cursor: pointer;
+      #menu-text {
+        color: white;
+        font-family: "PT Sans", sans-serif;
+      }
+      .fa-chevron-down {
+        color: white;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .navbar-profile {
+    width: 2.5%;
+    cursor: pointer;
+    border: 2px solid white;
+    border-radius: 50%;
+    margin-right: 5vw;
+    @media (max-width: 850px) {
+      width: 4.5%;
+    }
+    @media (max-width: 500px) {
+      width: 8%;
+    }
+  }
+}
+
+.fa-magnifying-glass {
+  cursor: pointer;
+  color: rgb(124, 127, 136);
+  &:hover {
+    color: white;
+  }
+}
+
+.nav-full-menu-div {
+  position: absolute;
+  width: 100vw;
+  margin-top: 8vh;
+  background-color: #191e25;
+  z-index: 5;
+  left: 0;
+  top: 0;
+  @include flex(column);
+  gap: 5vh;
+  height: 92vh;
+  padding: 3vh 0 0 5vw;
+  .div-for-menu-options {
+    @include flex(row);
+    align-items: center;
+    i {
+      width: 30px;
+      cursor: pointer;
+      padding: 0;
+      margin: 0;
+      color: rgb(124, 127, 136);
+    }
+    p {
+      font-family: "PT Sans", sans-serif;
+      font-size: clamp(13px, 0.8rem, 2vw);
+      color: rgb(124, 127, 136);
+      cursor: pointer;
+    }
+  }
+}
